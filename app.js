@@ -32,7 +32,7 @@ const menu = [
     category: "China",
     price: 5.99,
     img:
-      "https://www.savingdessert.com/wp-content/uploads/2019/02/Dan-Dan-Noodles-10.jpg",
+      "https://cookingwithcocktailrings.com/wp-content/uploads/2021/02/img_60394c63d9a7a.jpg",
     desc: `Dan dan noodle, serving with green onion `,
   },
   {
@@ -113,3 +113,54 @@ const foodRecipes = (item) => {
   `
   return food;
 }
+
+const showAllFoods = () => {
+  let allFoods = ""
+  menu.map(item => {
+    allFoods += foodRecipes(item)
+  })
+  menuDOM.innerHTML = allFoods;
+}
+
+allBTN = document.querySelector("#All")
+document.addEventListener("DOMContentLoaded", showAllFoods)
+allBTN.addEventListener("click", showAllFoods)
+
+const showKoreanFoods = () => {
+  let koreanFoods = ""
+  menu.map(item => {
+    if(item.category === "Korea"){
+      koreanFoods += foodRecipes(item)
+    }
+  })
+  menuDOM.innerHTML = koreanFoods;
+}
+
+koreaBTN = document.querySelector("#Korea")
+koreaBTN.addEventListener("click", showKoreanFoods);
+
+const showJapanFoods = () => {
+  let japanFoods = ""
+  menu.map(item => {
+    if(item.category === "Japan"){
+      japanFoods += foodRecipes(item)
+    }
+  })
+  menuDOM.innerHTML = japanFoods;
+}
+
+japanBTN = document.querySelector("#Japan")
+japanBTN.addEventListener("click", showJapanFoods);
+
+const showChinaFoods = () => {
+  let chinaFoods = ""
+  menu.map(item => {
+    if(item.category === "China"){
+      chinaFoods += foodRecipes(item)
+    }
+  })
+  menuDOM.innerHTML = chinaFoods;
+}
+
+chinaBTN = document.querySelector("#China")
+chinaBTN.addEventListener("click", showChinaFoods);

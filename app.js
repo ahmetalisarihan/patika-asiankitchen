@@ -81,3 +81,16 @@ const menu = [
     desc: `Red bean paste dessert, serving with honey.`,
   },
 ];
+
+btnDOM = document.querySelector(".btn-container")
+menuDOM = document.querySelector(".section-center")
+
+const btnCreate = () => {
+  let buttons = `
+  <button class="btn btn-outline-dark btn-item" id="All">All</button>
+  <button class="btn btn-outline-dark btn-item" id="Korea">Korea</button>
+  <button class="btn btn-outline-dark btn-item" id="Japan">Japan</button>
+  <button class="btn btn-outline-dark btn-item" id="China">China</button>
+  `
+  btnDOM.innerHTML = buttons;
+}
